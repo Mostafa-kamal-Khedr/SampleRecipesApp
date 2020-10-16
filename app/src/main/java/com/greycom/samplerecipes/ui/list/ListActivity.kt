@@ -176,7 +176,8 @@ class ListActivity : AppCompatActivity(), RecipesAdapter.OnRecipeClickListener {
         search_edt.setOnQueryTextListener(object : OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return if (!query.isNullOrBlank()) {
-
+                    Log.i("ListActivity", "onQueryTextSubmit: ")
+                    querySearch(query)
                     false
                 } else true
             }
@@ -202,8 +203,7 @@ class ListActivity : AppCompatActivity(), RecipesAdapter.OnRecipeClickListener {
                 return if (!newText.isNullOrBlank()) {
                     Log.i("ListActivity", "onQueryTextChange: ")
                     // do Search
-                    Log.i("ListActivity", "onQueryTextSubmit: ")
-                    querySearch(newText)
+
                     false
                 } else true
             }

@@ -3,6 +3,7 @@ package com.greycom.samplerecipes.ui.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.greycom.samplerecipes.R
 import com.greycom.samplerecipes.pojo.RecipesResponse.RecipesResponseItem
 import kotlinx.android.synthetic.main.item_recipe.view.*
+import java.util.*
 
 class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.RecipesViewHolder>() {
     private lateinit var listener: OnRecipeClickListener
@@ -56,10 +58,11 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.RecipesViewHolder>() 
     }
 
     interface OnRecipeClickListener {
-        fun onRecipeClick(recipeItem : RecipesResponseItem)
+        fun onRecipeClick(recipeItem: RecipesResponseItem)
     }
 
     fun setOnRecipeClickListener(OnRecipeClickListener: OnRecipeClickListener) {
         listener = OnRecipeClickListener
     }
+
 }
